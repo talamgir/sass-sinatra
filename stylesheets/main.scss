@@ -1,0 +1,107 @@
+@import '../bourbon/bourbon';
+
+html {
+	background: "backgroundpic.jpg" no-repeat center center fixed;
+	background-size: cover;
+	body {
+		margin: 0;
+	}
+}
+
+$auto-margin: 0 auto;
+$auto-width: 960px;
+$half-width: 480px;
+$auto-font: 'Open Sans', serif;
+
+@mixin transition($property,$time,$style,$duration){
+	-webkit-transition:$property $time $style $duration;
+
+h1 {
+	font-family: $auto-font;
+}
+
+
+p {
+	@extend h1;
+}
+
+#wrapper {
+	margin: $auto-margin;
+	max-width: $auto-width;
+}
+
+#sidebar {
+	position: fixed;
+	left:0;
+	background-color: teal;
+	margin-right: 10px
+}
+
+nav {
+	max-width: $auto-width;
+	margin: $auto-margin;
+	border: black;
+	background: tint(blue, 68%);
+	ul {
+		text-align: center;
+		margin: 0;
+		padding: 10px
+		li {
+			list-style: none;
+			display: inline-block;
+			padding-left: 10px;
+			padding-right: 10px
+			a {
+				color: tint(green, 50%);
+				display: inline-block;
+				padding: 10px;
+				text-decoration: none;
+				background-color: orange;
+				border-radius: 4px;
+				@include transition(background-color, 500ms, ease-in,  .2ms);
+			}
+		}
+		a:hover {
+			color: red; 
+			background-color: blue;
+
+		}		
+	}
+}
+
+.one {
+	width: $half-width;
+	float: left;
+	display: inline-block;
+
+}
+
+.clear {
+	clear:both;
+}
+
+.two { 
+	width: $half-width;
+	float: right;
+	display: inline-block; }
+
+.three {
+	width: $half-width;
+	float: left;
+	display: inline-block;
+}
+
+.four {
+	width: $half-width;
+	float: left;
+	display: inline-block;
+}
+
+.image {
+	float: right;
+}
+
+
+footer {
+	clear: both;
+}

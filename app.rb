@@ -20,7 +20,7 @@ end
 get 'locator' do
 		geocoded_by :ip_address,
   	:latitude => :lat, :longitude => :lon
-	after_validation :geocode
+	  after_validation :geocode
 end
 
 get '/email' do
